@@ -13,7 +13,7 @@ const emailSender = async ({
       secure: false,
       auth: {
         user: "djangodeveloper9@gmail.com",
-        pass: "wxvqiusjiyxgxfse",
+        pass: "",
       },
     });
 
