@@ -10,6 +10,9 @@ const generateHash = (text) => {
 const compareHash = (rawText, hashText) =>
   bcrypt.compareSync(rawText, hashText);
 
+const generateActivationToken = ({ id, email }) =>
+  jwt.sign({ id, email }, process.env.JWT_EMAIL_SECRET_KEY);
+
 const generateAuthToken = (user) =>
   jwt.sign(
     {
@@ -27,8 +30,9 @@ const verifyAuthToken = (jwtToken) =>
   jwt.verify(jwtToken, process.env.JWT_PRIVATE_KEY);
 
 module.exports = {
-  generateHash,
   compareHash,
-  generateAuthToken,
+  generateHash,
   verifyAuthToken,
+  generateAuthToken,
+  generateActivationToken,
 };

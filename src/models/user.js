@@ -22,6 +22,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: false,
   },
+  accountActivationToken: {
+    type: String,
+    required: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now(),
